@@ -3,12 +3,11 @@
 "use strict";
 
 document.addEventListener("deviceready", onDeviceReady, false);
-var cam;
+//var cam;
 
 function onDeviceReady()
 {
-    cam = new cameraApp();
-    cam.run();
+  
    //cameraApp.getPhotoFromAlbum
     //cam.getPhotoFromAlbum();
     
@@ -58,6 +57,9 @@ MyApp.gallery = function ()
         viewShown:function()
         {
             alert("view Shown and move back to   homepage");
+
+            cam = new cameraApp();
+            cam.run();
             cam.getPhotoFromAlbum();
 
             MyApp.app.navigate("home");
