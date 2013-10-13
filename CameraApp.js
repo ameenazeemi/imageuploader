@@ -1,7 +1,7 @@
 ﻿
 function cameraApp() { }
 
-cameraApp.prototype = {
+cameraApp = {
     _pictureSource: null,
     _destinationType: null,
 

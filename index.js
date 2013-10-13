@@ -3,13 +3,15 @@
 "use strict";
 
 document.addEventListener("deviceready", onDeviceReady, false);
-//var cam;
+
 
 function onDeviceReady()
 {
   
-   //cameraApp.getPhotoFromAlbum
-    //cam.getPhotoFromAlbum();
+    cameraApp.run();
+    
+
+    
     
 }
 
@@ -56,13 +58,25 @@ MyApp.gallery = function ()
     var viewModel = {
         viewShown:function()
         {
-            alert("view Shown and move back to   homepage");
+            try
+            {
+                alert("view Shown and move back to   homepage");
 
-            cam = new cameraApp();
-            cam.run();
-            cam.getPhotoFromAlbum();
+                //var cam = new cameraApp();
+                //cam.run();
+                cameraApp.getPhotoFromAlbum();
+                //cam.getPhotoFromAlbum();
 
-            MyApp.app.navigate("home");
+               
+            }
+            catch (e)
+            {
+                alert(e.message);
+            }
+            finally
+            {
+                MyApp.app.navigate("home");
+            }
         },
         toolbarItems: [
              { align: 'left', widget: 'button', options: { type: 'back', text: 'Back' } },
